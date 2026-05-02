@@ -1,1 +1,1 @@
-# aura-ai-droid
+# aura-ai-offline
