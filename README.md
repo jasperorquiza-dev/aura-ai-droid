@@ -1,6 +1,6 @@
 # 🌟 Aura AI — Offline Gemma Assistant for Android
 
-An Android AI chat app powered by **Google Gemma 2B** running **100% offline** on-device using MediaPipe LLM Inference API. Features a premium **glassmorphism** UI, voice input, image analysis, file reading, and full AI persona customization.
+An Android AI chat app powered by **Google Gemma 4B** running **100% offline** on-device using MediaPipe LLM Inference API. Features a premium **glassmorphism** UI, voice input, image analysis, file reading, and full AI persona customization.
 
 ---
 
@@ -8,7 +8,7 @@ An Android AI chat app powered by **Google Gemma 2B** running **100% offline** o
 
 | Feature | Description |
 |---------|-------------|
-| 🧠 **Offline AI** | Gemma 2B runs entirely on-device — no internet, no API keys |
+| 🧠 **Offline AI** | Gemma 4B runs entirely on-device — no internet, no API keys |
 | 💬 **Chat** | Streaming responses with Markdown rendering |
 | 🎙️ **Voice Input** | Speak your messages using the microphone |
 | 🖼️ **Image Analysis** | Send photos from gallery for the AI to describe |
@@ -30,7 +30,7 @@ File → Open → select the GemmaAI folder
 
 Go to: https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/android
 
-Download: **`gemma-2b-it-cpu-int4.bin`** (≈ 1.3 GB)
+Download: **`gemma2-4b-it-cpu-int4.bin`** (≈ 2.6 GB)
 
 > You need to accept Google's terms on Kaggle: https://www.kaggle.com/models/google/gemma
 
@@ -41,7 +41,7 @@ Download: **`gemma-2b-it-cpu-int4.bin`** (≈ 1.3 GB)
 adb shell mkdir -p /data/local/tmp/llm
 
 # Push model (replace path with where you downloaded it)
-adb push gemma-2b-it-cpu-int4.bin /data/local/tmp/llm/gemma.bin
+adb push gemma2-4b-it-cpu-int4.bin /data/local/tmp/llm/gemma.bin
 
 # Verify
 adb shell ls -la /data/local/tmp/llm/
@@ -129,7 +129,7 @@ In Settings (gear icon), you can adjust:
 
 ## ⚡ Performance Tips
 
-- Use **int4 quantized** model (gemma-2b-it-cpu-int4.bin) for fastest performance
+- Use **int4 quantized** model (gemma2-4b-it-cpu-int4.bin) for fastest performance
 - Keep **Max Tokens ≤ 512** for faster responses on older devices
 - The first response after loading may be slower (JIT warmup)
 - Recommended: Snapdragon 8 Gen 1+ or equivalent with 8GB RAM
@@ -145,7 +145,7 @@ In Settings (gear icon), you can adjust:
 → Reduce Max Tokens in Settings, use the int4 model variant
 
 **Slow responses**
-→ Normal for 2B model on CPU. Consider keeping responses short.
+→ Normal for 4B model on CPU. Consider keeping responses short.
 
 **Font shows as default**
 → Download Outfit font and place in `res/font/` (see setup step 4)
