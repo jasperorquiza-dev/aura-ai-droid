@@ -1,25 +1,25 @@
-# 🌟 Aura AI — Offline Gemma Assistant for Android
+# Aura AI — Offline Gemma Assistant for Android
 
 An Android AI chat app powered by **Google Gemma 4B** running **100% offline** on-device using MediaPipe LLM Inference API. Features a premium **glassmorphism** UI, voice input, image analysis, file reading, and full AI persona customization.
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🧠 **Offline AI** | Gemma 4B runs entirely on-device — no internet, no API keys |
-| 💬 **Chat** | Streaming responses with Markdown rendering |
-| 🎙️ **Voice Input** | Speak your messages using the microphone |
-| 🖼️ **Image Analysis** | Send photos from gallery for the AI to describe |
-| 📄 **File Reading** | Load text/PDF files and ask the AI to summarize |
-| 🎨 **Glassmorphism UI** | Premium dark purple glass effect design |
-| ⚙️ **AI Customization** | Name, system prompt, temperature, topK, topP, maxTokens |
-| 📳 **Haptic Feedback** | Satisfying tactile responses on interactions |
+| **Offline AI** | Gemma 4B runs entirely on-device — no internet, no API keys |
+| **Chat** | Streaming responses with Markdown rendering |
+| **Voice Input** | Speak your messages using the microphone |
+| **Image Analysis** | Send photos from gallery for the AI to describe |
+| **File Reading** | Load text/PDF files and ask the AI to summarize |
+| **Glassmorphism UI** | Premium dark purple glass effect design |
+| **AI Customization** | Name, system prompt, temperature, topK, topP, maxTokens |
+| **Haptic Feedback** | Satisfying tactile responses on interactions |
 
 ---
 
-## 🚀 Quick Setup
+## Quick Setup
 
 ### 1. Open in Android Studio
 ```
@@ -66,7 +66,7 @@ Recommended: Android 12+ with **6GB+ RAM**
 
 ---
 
-## 📱 Screenshots Preview
+## Screenshots Preview
 
 ### App Screens
 
@@ -83,7 +83,7 @@ Recommended: Android 12+ with **6GB+ RAM**
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 GemmaAI/
@@ -112,7 +112,7 @@ GemmaAI/
 
 ---
 
-## 🔧 AI Customization
+## AI Customization
 
 In Settings (gear icon), you can adjust:
 
@@ -127,7 +127,7 @@ In Settings (gear icon), you can adjust:
 
 ---
 
-## ⚡ Performance Tips
+## Performance Tips
 
 - Use **int4 quantized** model (gemma2-4b-it-cpu-int4.bin) for fastest performance
 - Keep **Max Tokens ≤ 512** for faster responses on older devices
@@ -136,7 +136,7 @@ In Settings (gear icon), you can adjust:
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 **"Model not found"**
 → Run: `adb push gemma.bin /data/local/tmp/llm/gemma.bin`
@@ -152,7 +152,7 @@ In Settings (gear icon), you can adjust:
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 - **MediaPipe Tasks GenAI** 0.10.14 — on-device LLM inference
 - **Markwon** 4.6.2 — Markdown rendering in chat
@@ -162,6 +162,6 @@ In Settings (gear icon), you can adjust:
 
 ---
 
-## 📝 License
+## License
 
 This project uses Google's Gemma model under the [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
