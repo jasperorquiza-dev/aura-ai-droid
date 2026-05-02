@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings Activity -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_main"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Background orbs -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <View
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_glow_orb_purple"
+                android:layout_gravity="top|end"
+                android:alpha="0.3"
+                android:layout_marginTop="-60dp"
+                android:layout_marginEnd="-60dp" />
+        </FrameLayout>
+
+        <!-- Toolbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/bg_glass_toolbar"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_button"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Customize AI"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/outfit_bold" />
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Reset"
+                android:textSize="12sp"
+                android:backgroundTint="#2A1E3A"
+                android:textColor="#A78BCA"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+        </LinearLayout>
+
+        <!-- Model info card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_ai_avatar_small"
+                android:gravity="center"
+                android:layout_marginEnd="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🧠" android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Model" android:textSize="11sp" android:textColor="#A78BCA" />
+                <TextView
+                    android:id="@+id/modelPathText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textSize="12sp"
+                    android:textColor="#D4C8E8"
+                    android:ellipsize="middle"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ── Persona Section ─────────────────────────────────────── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="AI PERSONA" android:textSize="11sp" android:textColor="#7A6A9A"
+            android:letterSpacing="0.12" android:paddingHorizontal="20dp"
+            android:paddingBottom="8dp" android:fontFamily="@font/outfit_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- AI Name -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="AI Name" android:textColor="#C4B5D8" android:textSize="13sp"
+                android:layout_marginBottom="6dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/GlassInputLayout"
+                android:layout_marginBottom="20dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aura"
+                    android:textColor="#FFFFFF"
+                    android:inputType="textPersonName"
+                    android:background="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- System Prompt -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="System Prompt (defines AI personality)" android:textColor="#C4B5D8"
+                android:textSize="13sp" android:layout_marginBottom="6dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/GlassInputLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/systemPromptInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="5"
+                    android:maxLines="12"
+                    android:gravity="top"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#7A6A9A"
+                    android:inputType="textMultiLine"
+                    android:background="@null"
+                    android:textSize="13sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- ── Generation Parameters ───────────────────────────────── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="GENERATION PARAMETERS" android:textSize="11sp" android:textColor="#7A6A9A"
+            android:letterSpacing="0.12" android:paddingHorizontal="20dp"
+            android:paddingBottom="8dp" android:fontFamily="@font/outfit_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Temperature -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="🌡️ Temperature"
+                    android:textColor="#C4B5D8" android:textSize="14sp" />
+                <TextView android:id="@+id/temperatureValue" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0.80"
+                    android:textColor="#A855F7" android:textSize="14sp"
+                    android:fontFamily="@font/outfit_bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/temperatureSlider" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="200" android:progress="80"
+                android:progressTint="#A855F7" android:thumbTint="#A855F7"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Max tokens -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="📝 Max Tokens"
+                    android:textColor="#C4B5D8" android:textSize="14sp" />
+                <TextView android:id="@+id/maxTokensValue" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="1024"
+                    android:textColor="#A855F7" android:textSize="14sp"
+                    android:fontFamily="@font/outfit_bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/maxTokensSlider" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="1920" android:progress="896"
+                android:progressTint="#A855F7" android:thumbTint="#A855F7"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Top-K -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="🎯 Top-K Sampling"
+                    android:textColor="#C4B5D8" android:textSize="14sp" />
+                <TextView android:id="@+id/topKValue" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="40"
+                    android:textColor="#A855F7" android:textSize="14sp"
+                    android:fontFamily="@font/outfit_bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/topKSlider" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="100" android:progress="40"
+                android:progressTint="#A855F7" android:thumbTint="#A855F7"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Top-P -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="📊 Top-P (Nucleus)"
+                    android:textColor="#C4B5D8" android:textSize="14sp" />
+                <TextView android:id="@+id/topPValue" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0.95"
+                    android:textColor="#A855F7" android:textSize="14sp"
+                    android:fontFamily="@font/outfit_bold" />
+            </LinearLayout>
+            <SeekBar android:id="@+id/topPSlider" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="100" android:progress="95"
+                android:progressTint="#A855F7" android:thumbTint="#A855F7" />
+        </LinearLayout>
+
+        <!-- ── App Preferences ─────────────────────────────────────── -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="APP PREFERENCES" android:textSize="11sp" android:textColor="#7A6A9A"
+            android:letterSpacing="0.12" android:paddingHorizontal="20dp"
+            android:paddingBottom="8dp" android:fontFamily="@font/outfit_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <!-- Voice -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="🎙️ Voice Input"
+                    android:textColor="#EDE8F5" android:textSize="15sp" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/voiceSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="#A855F7"
+                    app:trackTint="#4A235A" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp" />
+
+            <!-- Haptics -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="📳 Haptic Feedback"
+                    android:textColor="#EDE8F5" android:textSize="15sp" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/hapticsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="#A855F7"
+                    app:trackTint="#4A235A" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="16dp"
+            android:text="Save &amp; Apply Settings"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/outfit_bold"
+            android:backgroundTint="#00000000"
+            android:background="@drawable/bg_save_button"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+</ScrollView>

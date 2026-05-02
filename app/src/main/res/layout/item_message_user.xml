@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- User message bubble - right aligned with purple gradient glass -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="end"
+    android:layout_marginTop="6dp"
+    android:layout_marginStart="48dp"
+    android:layout_marginEnd="4dp">
+
+    <!-- Image attachment if present -->
+    <ImageView
+        android:id="@+id/attachedImage"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:background="@drawable/bg_message_image"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Message text bubble -->
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_user_bubble"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:lineSpacingMultiplier="1.3"
+        android:maxWidth="260dp" />
+
+</LinearLayout>

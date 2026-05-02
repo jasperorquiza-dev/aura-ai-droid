@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- NOTE: Replace @font/outfit_bold / @font/outfit_regular with actual font files
+     OR keep as is and the system default sans-serif will be used as fallback.
+     Download Outfit from https://fonts.google.com/specimen/Outfit
+     and place outfit_regular.ttf + outfit_bold.ttf in res/font/ -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.GemmaAI" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/purple_200</item>
+        <item name="android:windowBackground">@drawable/bg_gradient_main</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Splash theme with transparent status bar -->
+    <style name="Theme.GemmaAI.Splash" parent="Theme.GemmaAI">
+        <item name="android:windowBackground">@drawable/bg_gradient_main</item>
+    </style>
+
+    <!-- Bottom Sheet theme -->
+    <style name="Theme.GemmaAI.BottomSheet" parent="Theme.Material3.Dark.BottomSheetDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/GemmaBottomSheetStyle</item>
+    </style>
+
+    <style name="GemmaBottomSheetStyle" parent="Widget.Material3.BottomSheet">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Glass input layout style -->
+    <style name="GlassInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">#15FFFFFF</item>
+        <item name="boxStrokeColor">#30FFFFFF</item>
+        <item name="hintTextColor">#80FFFFFF</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+</resources>
+

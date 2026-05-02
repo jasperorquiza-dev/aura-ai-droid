@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aura AI</string>
+    <string name="hint_message">Ask Aura anything…</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_voice">Voice</string>
+    <string name="btn_attach">Attach</string>
+    <string name="label_settings">Settings</string>
+    <string name="label_clear">Clear</string>
+</resources>
